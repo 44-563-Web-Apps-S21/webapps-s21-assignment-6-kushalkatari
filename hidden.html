@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Assignment 5</title>
+ </head>
+<body>
+
+<h2>Hidden things by Kushal Katari</h2>
+
+<form>
+    <label for="secret">Enter the secret word</label>
+    <input type ="password" id="secret" name="secret" min=10 max=50 step=2 value=30> <br>
+
+    <label for="guess">Enter a guess</label>
+    <input type ="text" id="guess" name="guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+<p id="result">This text will be replaced </p>
+<div class="responsive">
+    <img src="images/Rose.jpg"  id="Flower" onclick="rotateImage()" height="200" width="200">
+  </div>
+ 
+
+
+<script> 
+currentImage = 0;
+function processGuess (){
+    console.log("Getting form values")
+    correct= document.getElementById("secret").value
+    wrong = document.getElementById("guess").value
+    confirmed = confirm("Are these the values? "+correct+" and "+wrong)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Congratulations"
+    } else {
+        out.innerHTML = "Sorry"
+    }
+}
+
+function rotateImage()
+{
+    switch(currentImage)
+    {
+        case 0: document.getElementById("Flower").src="images/Ivy.jfif";
+                currentImage=1;
+                 break;
+        case 1: document.getElementById("Flower").src="images/tulasi.jfif";
+                 currentImage=2;
+                 break;
+        case 2: document.getElementById("Flower").src="images/Rose.jpg";
+                 currentImage=0;
+                 break;
+        
+    }
+    
+
+}
+</script>
+
+</body>
+</html> 
