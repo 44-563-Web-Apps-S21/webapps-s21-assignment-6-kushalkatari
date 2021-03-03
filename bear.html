@@ -11,27 +11,30 @@
 
 <body>
 
-    <h2>Kushal Katari builds a bear</h2>
-
+    <h2 style="text-align: center; color: coral;"> Kushal Katari builds a bear</h2>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="background-color:darkkhaki;">
     <form >
         <input type="checkbox" id="hat" name="hat" value=hat>
             <label for="hat">hat </label>
             <br>
-
-            
             <input type="checkbox" id="scarf" name="scarf" value=scarf> 
             <label for="scarf">Scarf </label>
            <br>
-
            <input type="checkbox" id="shirt" name="shirt" value="shirt">
            <label for="shirt">Shirt</label>
              <br>
 
-            <input type="button" onclick="startBear()" value="Start a bear">
+            <input class="btn btn-danger" type="button" onclick="startBear()" value="Start a bear">
        
     </form>
 
     <p id="result">This text will be replaced </p>
+   
+</div>
+<div class="col-md-6" style="background-color: darkturquoise;">
 
     <form>
 
@@ -41,7 +44,7 @@
         <label for="value">Enter a value </label>
         <input type="text" id="value" name="value"> <br>
 
-        <input type="button" onclick="updatebear()" value="Update the bear">
+        <input  class="btn btn-danger" type="button" onclick="updatebear()" value="Update the bear">
     </form>
 
 
