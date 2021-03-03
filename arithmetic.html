@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<title>Arithmetic</title>
+
+<body>
+
+    <h2>Kushal Katari computes</h2>
+
+    <form>
+        <label for="num1">Enter a number</label>
+        <input type="number" id="num1" name="num1" value=10> <br>
+
+        <label for="num2">Enter a number</label>
+        <input type="number" id="num2" name="num2" value=2 autofocus> <br>
+
+        <input type="button" onclick="permutations()" value="compute">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <form>
+
+        <input type="radio" id="processRadio1" value="plus" onclick="processRadio()">
+        <label for="plus">+</label><br>
+
+        <input type="radio" id="processRadio2" value="minus" onclick="processRadio()">
+        <label for="minus">-</label></br>
+
+        <input type="radio" id="processRadio3" name="color" value="times" onclick="processRadio()">
+        <label for="times">*</label></br>
+
+        <input type="radio" id="processRadio4" name="color" value="divide" onclick="processRadio()">
+        <label for="divide">/</label></br>
+
+
+
+    </form>
+    <p id="result2">This text will be replaced </p>
+
+    <script>
+        function permutations() {
+
+          var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var i;
+            var product = 1;
+            
+            for (i = num1; i >= ((num1 - num2) + 1); i--) {
+                product = product * i;
+            }
+            out = document.getElementById("result")
+            out.innerHTML = product;
+        }
+
+        function processRadio() {
+
+          var num1 = parseInt(document.getElementById("num1").value)
+           var num2 = parseInt(document.getElementById("num2").value)
+
+            out = document.getElementById("result2")
+          
+           if (document.getElementById("processRadio1").checked) {
+           out.innerHTML = num1 + num2;
+            }
+            
+           else if (document.getElementById("processRadio2").checked) {
+                out.innerHTML = num1 - num2;
+            }
+            else if (document.getElementById("processRadio3").checked) {
+                out.innerHTML = num1 * num2;
+            }
+            else if (document.getElementById("processRadio4").checked) {
+                out.innerHTML = num1 / num2;
+            }
+
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>

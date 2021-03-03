@@ -28,18 +28,17 @@
 currentImage = 0;
 function processGuess (){
     console.log("Getting form values")
-    correct= document.getElementById("secret").value
-    wrong = document.getElementById("guess").value
-    confirmed = confirm("Are these the values? "+correct+" and "+wrong)
+   var correct= document.getElementById("secret").value
+   var wrong = document.getElementById("guess").value
+    
     
     out = document.getElementById("result")
-    if(confirmed){
+    if(correct == wrong){
         out.innerHTML = "Congratulations"
     } else {
         out.innerHTML = "Sorry"
     }
 }
-
 function rotateImage()
 {
     switch(currentImage)
@@ -52,12 +51,8 @@ function rotateImage()
                  break;
         case 2: document.getElementById("Flower").src="images/Rose.jpg";
                  currentImage=0;
-                 break;
-        
-    }
-    
-
-}
+                 break;   
+    }    }
 </script>
 
 </body>
